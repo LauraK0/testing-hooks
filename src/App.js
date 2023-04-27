@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+const App= () => {
+  const [name, setName] = React.useState("");
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <form>
+        <div className="row">
+          <div className="col-md-6">
+            <input
+              type="text"
+              placeholder="Enter your name"
+              className="input"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-6">
+            <button
+              type="submit"
+              className="btn btn-primary"
+            >
+              Add Name
+            </button>
+          </div>
+        </div>
+      </form>
+      <p>{name}</p>
+      </>
   );
-}
-
+};
 export default App;
+
+
+
